@@ -1,0 +1,138 @@
+{
+  "name": "babel",
+  "displayName": "Babel",
+  "description": "Babel Language Support",
+  "publisher": "WehrWolff",
+  "icon": "./resources/babel.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "license": "BSL-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WehrWolff/myLang.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "babel",
+        "aliases": [
+          "Babel",
+          "babel"
+        ],
+        "extensions": [
+          ".babel"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./resources/file_icon.png",
+          "light": "./resources/file_icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "babel",
+        "scopeName": "source.babel",
+        "path": "./syntaxes/babel.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "language-babel.newBabelFile",
+        "title": "Babel: New Babel File"
+      }
+    ],
+    "keybindings":[
+      {
+				"command": "language-babel.newBabelFile",
+				"key": "Alt+B Alt+N"
+			}
+    ],
+    "configuration": [
+      {
+        "title": "Babel",
+        "properties": {
+          "babel.todoComment": {
+            "title": "Comment todo Color",
+            "description": "The color to use for comments marked as todos.",
+            "type": "string",
+            "default": "#0055FF"
+          }
+        }
+      }
+    ],    
+    "configurationDefaults": {
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "comment.highlight.output",
+            "settings": {
+              "foreground": "#FFFFFF"              
+            }
+          },
+          {
+            "scope": "comment.highlight.code.invalidate",
+            "settings": {
+              "foreground": "#80808080",
+              "fontStyle": "bold strikethrough"
+            }
+          },
+          {
+            "scope": "comment.highlight.documentation",
+            "settings": {
+              "foreground": "#808080"
+            }
+          },
+          {
+            "scope": "comment.highlight.todo",
+            "settings": {
+              "foreground": "#0055ff"
+            }
+          },
+          {
+            "scope": "comment.highlight.question",
+            "settings": {
+              "foreground": "#89CFF0"
+            }
+          },
+          {
+            "scope": "comment.highlight.information",
+            "settings": {
+              "foreground": "#98C379"
+            }
+          },
+          {
+            "scope": "comment.highlight.warning",
+            "settings": {
+              "foreground": "#CCA700"
+            }
+          },
+          {
+            "scope": "comment.highlight.severe",
+            "settings": {
+              "foreground": "#FF0000"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./dist/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.83.0"
+  }
+}
