@@ -1,0 +1,337 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Babel",
+	"patterns": [
+		{
+			"include": "#integrations"
+		},
+		{
+			"include": "#styled_comments"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#classes"
+		},
+		{
+			"include": "#tasks"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},	
+		{
+			"include": "#regex"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"integrations": {
+			"patterns": [				
+				{
+					"begin": "\\*python",
+					"end": "\\*python",
+					"captures": {"0": {"name": "entity.name.section.babel"}},
+					"patterns": [{"include": "source.python"}]
+				},
+				{
+					"begin": "\\*julia",
+					"end": "\\*julia",
+					"captures": {"0": {"name": "entity.name.section.babel"}},
+					"patterns": [{"include": "source.julia"}]
+				}
+			]
+		},
+		"styled_comments": {
+			"patterns": [
+			{
+				"begin": "~-",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.code.invalidate.babel"
+			},
+			{
+				"begin": "~doc",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.documentation.babel"
+			},
+			{
+				"begin": "~todo",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.todo.babel"
+			},
+			{
+				"begin": "~\\?",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.question.babel"
+			},
+			{
+				"begin": "~%",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.information.babel"
+			},
+			{
+				"begin": "~\\$",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.warning.babel"
+			},
+			{
+				"begin": "~!",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.highlight.severe.babel"
+			}
+			]
+		},
+		"comments": {
+			"patterns": [
+			{
+				"begin": "~",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.babel"
+					}
+				},
+				"end": "\\n",
+				"name": "comment.line.character.babel"
+			},
+			{			
+				"begin": "===",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.begin.babel"
+					}
+				},
+				"end": "===",
+				"endCaptures": {
+					"0":{
+						"name": "punctuation.definition.comment.end.babel"
+					}
+				},
+				"patterns": [
+					{
+						"begin": "-",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.invalid.begin.babel"
+							}
+						},
+						"end": "-",
+						"endCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.invalid.end.babel"
+							}
+						},
+						"name": "comment.highlight.code.invalidate.babel"
+					},
+					{
+						"begin": "doc",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.documentation.babel"
+					},
+					{
+						"begin": "todo",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.todo.babel"
+					},
+					{
+						"begin": "\\?",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.question.babel"
+					},
+					{
+						"begin": "%",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.information.babel"
+					},
+					{
+						"begin": "\\$",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.warning.babel"
+					},
+					{
+						"begin": "!",
+						"beginCaptures": {
+							"0": {
+								"name": "punctuation.definition.comment.babel"
+							}
+						},
+						"end": "\\n",
+						"name": "comment.highlight.severe.babel"
+					}
+				],
+				"name": "comment.block.babel"
+			}
+			]
+		},		
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.babel",
+					"match": "\\b(?:if|then|end|do|to|while|for|return)\\b"
+				},
+				{
+					"name": "keyword.operator.babel",
+					"match": "\\b(?:\\+|-|\\*|\\\\|\\^|<|>|=|<<|<=|>=|==)\\b"
+				}	
+			]
+		},				
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.babel",
+					"match": "\\b(?:int|double|bool|string|char|list|tuple|map|dict|any|void|null|class|task)\\b"
+				},
+				{
+					"name": "support.type.struct.babel",
+					"match": "\\bstruct\\b"
+				},
+				{
+					"name": "storage.modifier.babel",
+					"match": "\\b(?:static|final|const)\\b"
+				}							
+			]
+		},
+		"classes": {
+			"patterns": [
+				{
+					"name": "support.class.babel",
+					"match": "\\b(?:Fraction|Vector|Plot|Graph|Tree)\\b"
+				},
+				{
+					"name": "entity.name.class.babel",
+					"match": "(?<=class )\\s*\\w+"
+				}
+			]
+		},
+		"tasks": {
+			"patterns": [
+				{
+					"name": "support.function.babel",
+					"match": "\\b(?:input|output)\\b"
+				},
+				{
+					"name": "entity.name.function.babel",
+					"match": "(?<=task )\\s*\\w+"
+				}
+			]			
+		},
+		"strings": {
+			"name": "string.quoted.double.babel",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.babel",
+					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"name": "string.quoted.single.babel",
+			"match": "'(?:\\\\.|[^\\\\])'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.babel",
+					"match": "\\\\."
+				}
+			]
+		},
+		"regex": {
+			"name": "string.regexp.babel",
+			"begin": "r\"",
+			"end": "\""
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.other.babel",
+				"match": "[a-zA-Z_][a-zA-Z0-9_-]*"
+			}]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.babel",
+					"match": "\\d*\\.?\\d+"
+				},
+				{
+					"name": "constant.language.babel",
+					"match": "\\b(?:TRUE|FALSE)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.babel"
+}
