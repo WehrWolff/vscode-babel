@@ -13,8 +13,8 @@ We use github to host code, to track issues and feature requests, as well as acc
 ## Any contributions you make will be under the Boost Software License
 In short, when you submit code changes, your submissions are understood to be under the same [Boost Software License](LICENSE.md) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); it's that easy!
+## Report bugs using Github's issues
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/WehrWolff/vscode-babel/issues), it's that easy!
 
 ## Write bug reports with detail, background, and sample code
 Below you can find a short checklist for your bug reports, additionaly you can check out the [issue templates](.github/ISSUE_TEMPLATE) of this repository.
@@ -46,7 +46,8 @@ You are asked to follow common coding conventions, structure and comment your co
 
 * limit lines to no more than 100 characters
 * comment code, especially in hard to understand areas
-* although this project doesn't envolve python code you can find practical coding guidelines [here](https://peps.python.org/pep-0008/).
+
+Although this project doesn't envolve python code you can find practical coding guidelines [here](https://peps.python.org/pep-0008/).
 
 ## License
 By contributing, you agree that your contributions will be licensed under its Boost Software License.
