@@ -240,7 +240,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.babel",
-					"match": "\\b(?:if|then|end|do|to|while|for|return)\\b"
+					"match": "\\b(?:if|else|then|end|do|to|while|for|return|imp)\\b"
 				},
 				{
 					"name": "keyword.operator.babel",
