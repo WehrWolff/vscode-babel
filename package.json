@@ -47,6 +47,9 @@
       {
         "command": "language-babel.newBabelFile",
         "title": "Babel: New Babel File"
+      }, {
+        "command": "language-babel.spellCheck",
+        "title": "Babel: Check Spelling (Active File)"
       }
     ],
     "keybindings":[
